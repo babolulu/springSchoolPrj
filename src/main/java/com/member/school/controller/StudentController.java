@@ -13,23 +13,25 @@ import com.member.school.model.StudentLogin;
 import com.member.school.service.StudentService;
 
 @Controller
-@SessionAttributes("student")
+@SessionAttributes(value = { "student", "studentLogin" })
 public class StudentController {
-	
+
 	@Autowired
 	private StudentService studentService;
-	
-	@RequestMapping(value="/signup", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(Model model) {
 		Student student = new Student();
 		model.addAttribute("student", student);
 		return "signup";
 	}
-	
-	@RequestMapping(value="/signup", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("student") Student student, Model model) {
-		if(studentService.getStudentByUserName(student.getUserName())) {
-			model.addAttribute("message", "User Name exists. Try another user name");
+		if (studentService.getStudentByUserName(student.getUserName())) {
+
+			model.addAttribute("message",
+					"User Name exists. Try another user name");
 			return "signup";
 		} else {
 			studentService.insertStudent(student);
@@ -37,21 +39,29 @@ public class StudentController {
 			return "redirect:login.html";
 		}
 	}
-	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		StudentLogin studentLogin = new StudentLogin();
 		model.addAttribute("studentLogin", studentLogin);
 		return "login";
 	}
-	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(@ModelAttribute("studentLogin") StudentLogin studentLogin) {
-		boolean found = studentService.getStudentByLogin(studentLogin.getUserName(), studentLogin.getPassword());
-		if (found) {				
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(
+			@ModelAttribute("studentLogin") StudentLogin studentLogin) {
+		boolean found = studentService.getStudentByLogin(
+				studentLogin.getUserName(), studentLogin.getPassword());
+		if (found) {
 			return "success";
-		} else {				
+		} else {
 			return "failure";
 		}
 	}
+
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Model model) {
+		return "index";
+	}
+
 }

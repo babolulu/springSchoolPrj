@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF8"
 	pageEncoding="UTF8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF8">
-<title>SpringSchoolPrj</title>
+<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+
 <style>
 body {
 	height: 100%;
@@ -18,11 +17,30 @@ body {
 	background-repeat: no-repeat;
 	display: compact;
 }
+.error {
+	color: #ff0000;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
 </style>
+<title>Student Enroll Login</title>
 </head>
 <body>
-	<script src="jquery-1.8.3.js"></script>
-	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="jquery-1.8.3.js">
+		
+	</script>
+
+	<script src="bootstrap/js/bootstrap.js">
+		
+	</script>
 
 	<div class="navbar navbar-default">
 
