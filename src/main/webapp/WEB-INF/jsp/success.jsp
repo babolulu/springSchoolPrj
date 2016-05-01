@@ -17,7 +17,7 @@
 </div>
 <div></div>
 <div></div>
-<a class="btn btn-primary" href="<spring:url value="login.html"/>">Login
-	as different user?</a>
+<a class="btn btn-primary" href="<spring:url value="login.html"/>">
+Login as different user?</a>
 </body>
 </html>
