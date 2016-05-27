@@ -42,7 +42,21 @@ body {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
+	
+	<script>
+	/*menu handler*/
+	$(function(){
+		var url = window.location;
+		//Will only work if string in href matches with location
+		$('ul.nav a[href="' + url + '"]').parent().addClass('active');
 
+		//Will also work for relative and absolute hrefs
+		$('ul.nav a').filter(function() {
+			return this.href == url;
+		}).parent().addClass('active');
+	 })
+	</script>
+	
 	<div class="navbar navbar-default">
 
 		<div class="navbar-header">
@@ -60,7 +74,7 @@ body {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="signup.html">Signup</a></li>
-				<li class="active"><a href="login.html">Login</a></li>
+				<li><a href="login.html">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
 					<ul class="dropdown-menu">

@@ -18,8 +18,8 @@ public class StudentServiceImpl implements StudentService {
 		schoolMemberMapper.insertStudent(student);
 	}
 
-	public boolean getStudentByLogin(String userName, String password) {
-		Student student = schoolMemberMapper.getStudentByUserName(userName);
+	public boolean getStudentByLogin(String emailAddress, String password) {
+		Student student = schoolMemberMapper.getStudentByEmailAddress(emailAddress);
 		
 		if(student != null && student.getPassword().equals(password)) {
 			return true;
@@ -28,8 +28,8 @@ public class StudentServiceImpl implements StudentService {
 		return false;
 	}
 
-	public boolean getStudentByUserName(String userName) {
-		Student student = schoolMemberMapper.getStudentByUserName(userName);
+	public boolean getStudentByEmailAddress(String emailAddress) {
+		Student student = schoolMemberMapper.getStudentByEmailAddress(emailAddress);
 		
 		if(student != null) {
 			return true;

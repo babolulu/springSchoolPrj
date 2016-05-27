@@ -3,7 +3,7 @@ package com.member.school.model;
 
 public class StudentLogin {
 
-	private String userName;
+	private String emailAddress;
 		
 	private String password;
 
@@ -11,16 +11,16 @@ public class StudentLogin {
 		return password;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}	
 
 }

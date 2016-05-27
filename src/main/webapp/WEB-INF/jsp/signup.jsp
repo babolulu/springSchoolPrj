@@ -1,20 +1,20 @@
 <%@ include file="common/IncludeTop.jsp"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF8"
+	pageEncoding="UTF8"%>
 <script src="datepicker/js/bootstrap-datepicker.js">
 	
 </script>
 
-
-<div class="container">
-	<div class="jumbotron">
-		<div>
-			<h1>Welcome to Online Student Enroll Signup</h1>
-			<p>Its absolutely quick!</p>
+	<div class="container">
+		<div class="jumbotron">
+			<div>
+				<h1>환영 : 온라인 학교</h1>
+				<p>빠른 회원 가입</p>
+			</div>
 		</div>
-	</div>
 
-	<div></div>
-</div>
+		<div></div>
+	</div>
 
 <c:if test="${not empty message}">
 	<div class="message green">${message}</div>
@@ -30,55 +30,6 @@
 						<fieldset>
 							<legend>Student Enroll Signup Form</legend>
 
-							<div class="form-group">
-								<label for="userNameInput" class="col-lg-3 control-label">User
-									Name</label>
-								<div class="col-lg-9">
-									<form:input type="text" class="form-control" path="userName"
-										id="userNameInput" placeholder="User Name" />
-									<form:errors path="userName" cssClass="error" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="passwordInput" class="col-lg-3 control-label">Password</label>
-								<div class="col-lg-9">
-									<form:input type="password" class="form-control"
-										path="password" id="passwordInput" placeholder="Password" />
-									<form:errors path="password" cssClass="error" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="firstNameInput" class="col-lg-3 control-label">First
-									Name</label>
-								<div class="col-lg-9">
-									<form:input type="text" class="form-control" path="firstName"
-										id="firstNameInput" placeholder="First Name" />
-									<form:errors path="firstName" cssClass="error" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="lastNameInput" class="col-lg-3 control-label">Last
-									Name</label>
-								<div class="col-lg-9">
-									<form:input type="text" class="form-control" path="lastName"
-										id="lastNameInput" placeholder="Last Name" />
-									<form:errors path="lastName" cssClass="error" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="dateOfBirthInput" class="col-lg-3 control-label">Date
-									of Birth</label>
-								<div class="date form_date col-lg-9"
-									data-date-format="mm/dd/yyyy" data-date-viewmode="years">
-									<form:input type="text" class="form-control" path="dateOfBirth"
-										id="dateOfBirthInput" placeholder="Date of Birth" />
-									<form:errors path="dateOfBirth" cssClass="error" />
-								</div>
-							</div>
 
 							<div class="form-group">
 								<label for="emailAddressInput" class="col-lg-3 control-label">Email
@@ -91,6 +42,58 @@
 								</div>
 							</div>
 
+<%-- 							<div class="form-group">
+								<label for="userNameInput" class="col-lg-3 control-label">User
+									Name</label>
+								<div class="col-lg-9">
+									<form:input type="text" class="form-control" path="userName"
+										id="userNameInput" placeholder="User Name" />
+									<form:errors path="userName" cssClass="error" />
+								</div>
+							</div> --%>
+
+							<div class="form-group">
+								<label for="passwordInput" class="col-lg-3 control-label">Password</label>
+								<div class="col-lg-9">
+									<form:input type="password" class="form-control"
+										path="password" id="passwordInput" placeholder="Password" />
+									<form:errors path="password" cssClass="error" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="nickNameInput" class="col-lg-3 control-label">Nick
+									Name</label>
+								<div class="col-lg-9">
+									<form:input type="text" class="form-control" path="nickName"
+										id="nickNameInput" placeholder="Nick Name" />
+									<form:errors path="nickName" cssClass="error" />
+								</div>
+							</div>
+<%-- 
+							<div class="form-group">
+								<label for="lastNameInput" class="col-lg-3 control-label">Last
+									Name</label>
+								<div class="col-lg-9">
+									<form:input type="text" class="form-control" path="lastName"
+										id="lastNameInput" placeholder="Last Name" />
+									<form:errors path="lastName" cssClass="error" />
+								</div>
+							</div> --%>
+
+							<div class="form-group">
+								<label for="dateOfBirthInput" class="col-lg-3 control-label">Date
+									of Birth</label>
+								<div class="date form_date col-lg-9"
+									data-date-format="mm/dd/yyyy" data-date-viewmode="years">
+									<form:input type="text" class="form-control" path="dateOfBirth"
+										id="dateOfBirthInput" placeholder="Date of Birth" />
+									<form:errors path="dateOfBirth" cssClass="error" />
+								</div>
+							</div>
+
+
+
 							<div class="col-lg-9 col-lg-offset-3">
 								<button class="btn btn-default">Cancel</button>
 
@@ -102,10 +105,10 @@
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal"
 													aria-hidden="true">&times;</button>
-												<h3>Signup Form Submission</h3>
+												<h3>가입</h3>
 											</div>
 											<div class="modal-body">
-												<p>Are you sure you want to do this?</p>
+												<p>올바르게 입력하셨습니까?</p>
 												<div class="progress progress-striped active">
 													<div id="doitprogress" class="progress-bar"></div>
 												</div>

@@ -5,72 +5,60 @@ import java.util.Date;
 public class Student {
 	private Long id;
 		
-	private String userName;
-
-	private String firstName;
-
-	private String lastName;
+	private String emailAddress;
 	
 	private String password;
-	
-	private String emailAddress;
+
+	private String nickName;
 	
 	private Date dateOfBirth;
 	
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-		
-	public String getEmailAddress() {
-		return emailAddress;
-	}
+	public Student(){}
 	
-	public String getFirstName() {
-		return firstName;
+	public Student(String emailAddress, String password){
+		this.emailAddress = emailAddress;
+		this.password = password;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public String getPassword() {
+		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}	
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
 
 }

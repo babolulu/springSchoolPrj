@@ -22,21 +22,19 @@
  
   <insert id="insertStudent" parameterType="Student">
   	INSERT INTO student
-  		(userName, password, firstName, lastName, dateOfBirth, emailAddress)
+  		(emailAddress, password, nickName, dateOfBirth)
   	VALUES
-		(#{userName},#{password}, #{firstName}, #{lastName}, #{dateOfBirth}, #{emailAddress})
+		(#{emailAddress}, #{password}, #{nickName}, #{dateOfBirth})
   </insert>
 
-  <select id="getStudentByUserName" parameterType="string" resultType="Student">
+  <select id="getStudentByEmailAddress" parameterType="string" resultType="Student">
     SELECT 
-    USERNAME as userName,
+    EMAILADDRESS as emailAddress,
     PASSWORD as password,
-    FIRSTNAME as firstName,
-    LASTNAME as lastName,
-    DATEOFBIRTH as dateOfBirth,
-    EMAILADDRESS as emailAddress
-    FROM student 
-    WHERE userName = #{userName}
+    NICKNAME as nickName,
+    DATEOFBIRTH as dateOfBirth
+    FROM student
+    WHERE emailAddress = #{emailAddress}
   </select>
 
 </mapper>
