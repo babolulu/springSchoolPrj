@@ -8,15 +8,15 @@
 <div class="panel panel-success">
 	<div class="panel-heading">
 		<h3 class="panel-title text-right">
-		<c:if test="${not empty message}">
-			<div class="message green">${message}님 <a href="logout.html">Logout</a></div>
+		<c:if test="${not empty nickName}">
+			<div class="message green">${nickName}님 <a href="logout.html">Logout</a></div>
 		</c:if>
 </h3>
 	</div>
 	<div class="panel-body">
 		<div class="alert alert-dismissable alert-success">
 			<button type="button" class="close" data-dismiss="alert">지우기</button>
-			로그인 성공, 여려분의 <strong>꿈</strong>을 펼쳐 보세요.
+			메인 입니다, 여려분의 <strong>꿈</strong>을 펼쳐 보세요.
 		</div>
 	</div>
 </div>

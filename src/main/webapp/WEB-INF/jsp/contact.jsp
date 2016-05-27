@@ -1,4 +1,4 @@
-<%@ include file="common/IncludeTop.jsp"%>
+<%@ include file="common/IncludeTopMain.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF8"
 	pageEncoding="UTF8"%>
 <div class="container">

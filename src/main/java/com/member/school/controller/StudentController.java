@@ -62,13 +62,13 @@ public class StudentController {
 	}
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(@ModelAttribute("studentLogin") StudentLogin studentLogin, Model model) {
+	public String main(@ModelAttribute("student") Student student, @ModelAttribute("studentLogin") StudentLogin studentLogin, Model model) {
 
 		boolean found = studentService.getStudentByLogin(
 				studentLogin.getEmailAddress(), studentLogin.getPassword());
 		if (found) {
 			model.addAttribute("student", new Student(studentLogin.getEmailAddress(), studentLogin.getPassword()));
-			model.addAttribute("message", studentLogin.getEmailAddress());
+			model.addAttribute("nickName", studentService.getNickNameByEmailAddress(studentLogin.getEmailAddress()));
 			System.out.println("session확인 : student.getPassword() = " + studentLogin.getPassword());
 			return "main";
 		} else {
