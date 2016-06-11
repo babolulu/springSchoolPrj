@@ -38,13 +38,4 @@ public class StudentServiceImpl implements StudentService {
 		return false;
 	}
 
-	public String getNickNameByEmailAddress(String emailAddress) {
-		Student student = schoolMemberMapper.getStudentByEmailAddress(emailAddress);
-		
-		if(student != null) {
-			return student.getNickName();
-		}
-		
-		return "이름이 존재하지 않습니다";
-	}
 }

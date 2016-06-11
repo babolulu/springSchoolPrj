@@ -6,5 +6,4 @@ public interface StudentService {
 	void insertStudent(Student student);
 	boolean getStudentByLogin(String emailAddress, String password);
 	boolean getStudentByEmailAddress(String emailAddress);
-	public String getNickNameByEmailAddress(String emailAddress);
 }
