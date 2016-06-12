@@ -27,21 +27,20 @@ public class DependencyResolutionBeanPostProcessor implements BeanPostProcessor,
 	}
 
 	@Override
-	public Object postProcessAfterInitialization(Object arg0, String arg1)
-			throws BeansException {
-		if( arg0 instanceof StudentService){
-			System.out.println("5 나는 StudentService 빈, init 메소드 수행 후 입니다.  postProcessAfterInitialization" + arg1);
-		}
-		return arg0;
-	}
-
-	@Override
 	public Object postProcessBeforeInitialization(Object arg0, String arg1)
 			throws BeansException {
 		if( arg0 instanceof StudentService){
-			System.out.println("5 나는 StudentService 빈, 초기화 전 입니다.  postProcessBeforeInitialization" + arg1);
+			System.out.println("2. postProcessBeforeInitialization() method invoked Before invocation of initMethod() in " + arg1 + " Class And this is right after invocation of constructor method");
 		}
 		return arg0;
 	}
-
+	
+	@Override
+	public Object postProcessAfterInitialization(Object arg0, String arg1)
+			throws BeansException {
+		if( arg0 instanceof StudentService){
+			System.out.println("5. postProcessAfterInitialization() method invoked After invocation of initMethod() in " + arg1 + " Class");
+		}
+		return arg0;
+	}
 }

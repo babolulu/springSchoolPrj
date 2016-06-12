@@ -17,11 +17,11 @@ public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private SchoolMemberMapper schoolMemberMapper;
 	
-	@Value("2. set Method 수행")
+	@Value("set Method invoked using @Value to set message field")
 	private String message;
 	
 	public StudentServiceImpl(){
-		System.out.println("1. StudentServiceImpl 생성자 메서드 수행");
+		System.out.println("1. StudentServiceImpl() constructor method invoked");
 	}
 	
 	@Transactional
@@ -31,13 +31,13 @@ public class StudentServiceImpl implements StudentService {
 
 	@PostConstruct
 	public void initMethod(){
-		System.out.println("2." + message);
-		System.out.println("3. init method invoked");
+		System.out.println("3. " + message);
+		System.out.println("4. initMethod() method invoked");
 	}
 	
 	@PreDestroy
 	public void destroyMethod(){
-		System.out.println("4. destroy method invoked");
+		System.out.println("6. destroyMethod() method invoked");
 	}
 	
 	public boolean getStudentByLogin(String emailAddress, String password) {
