@@ -12,30 +12,25 @@ public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	private SchoolMemberMapper schoolMemberMapper;
-		
+
 	@Transactional
 	public void insertStudent(Student student) {
 		schoolMemberMapper.insertStudent(student);
 	}
-	
+
 	public boolean getStudentByLogin(String emailAddress, String password) {
 		Student student = schoolMemberMapper.getStudentByEmailAddress(emailAddress);
-		
-		if(student != null && student.getPassword().equals(password)) {
+		if (student != null && student.getPassword().equals(password)) {
 			return true;
 		}
-		
 		return false;
 	}
 
 	public boolean getStudentByEmailAddress(String emailAddress) {
 		Student student = schoolMemberMapper.getStudentByEmailAddress(emailAddress);
-		
-		if(student != null) {
+		if (student != null) {
 			return true;
 		}
-		
 		return false;
 	}
-
 }
